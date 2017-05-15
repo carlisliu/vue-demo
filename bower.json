@@ -1,0 +1,25 @@
+{
+  "name": "vue-demo",
+  "description": "demo for vue",
+  "main": "index.js",
+  "authors": [
+    "Carlis Liu"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "demo"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.3.3"
+  }
+}
