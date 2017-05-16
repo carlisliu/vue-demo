@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conditional Rendering</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../assets/components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template v-if="loginType==='username'">
+            <label>Username</label>
+            <input type="text" placeholder="Enter your username." key="username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input type="text" placeholder="Enter your email address." key="email">
+        </template>
+        <button @click="toggle">Toggle login type</button>
+        <h1 v-show="ok">H1</h1>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                loginType: 'username',
+                ok: true
+            },
+            methods: {
+                toggle: function() {
+                    this.loginType = this.loginType == 'email' ? 'username' : 'email';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
