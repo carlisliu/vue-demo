@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../assets/components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="example-1">
+        <button @click="counter++">Add One</button>
+        <p>The button above has been clicked {{ counter }} times.</p>
+    </div>
+    <div id="example-2">
+        <button @click="greet">Greet</button>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#example-1',
+            data: {
+                counter: 0
+            }
+        });
+
+        var vm2 = new Vue({
+            el: '#example-2',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                greet: function(event) {
+                    console.log(this.name);
+                    if (event) {
+                        console.log(event);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
