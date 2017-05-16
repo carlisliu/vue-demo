@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Components</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../assets/components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="example">
+        <my-component></my-component>
+    </div>
+    <div id="example2">
+        <input type="text" v-model="message">
+        <child v-bind:message="message"></child>
+    </div>
+    <div id="counter-event-example">
+        <p>{{total}}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+    <script type="text/javascript">
+        Vue.component('my-component', {
+            template: '<div>A custom component! </div>'
+        });
+        new Vue({
+            el: '#example'
+        });
+
+        Vue.component('child', {
+            template: '<span>{{ message }}</span>',
+            props: ['message']
+        });
+        var vm = new Vue({
+            el: '#example2',
+            data: {
+                message: 'world'
+            }
+        });
+
+        Vue.component('button-counter', {
+            template: '<button @click="increment">{{ counter }}</button>',
+            data: function() {
+                return {
+                    counter: 0
+                };
+            },
+            methods: {
+                increment: function() {
+                    this.counter++;
+                    this.$emit('increment');
+                }
+            }
+        });
+        var vm2 = new Vue({
+            el: '#counter-event-example',
+            data: {
+                total: 0
+            },
+            methods: {
+                incrementTotal: function() {
+                    this.total++;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
