@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Template Syntax</title>
+    <script type="text/javascript" src="../assets/components/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>Message:{{ msg | capitalize }}</span>
+        <span v-once>This will never change: {{ msg }}</span>
+        <div v-html="content">
+        </div>
+        <img src="" :src="url">
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                content: '<p>P data</p>',
+                url: ''
+            },
+            filters: {
+                capitalize: function(value) {
+                    if (!value) {
+                        return '';
+                    }
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase() + value.slice(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
