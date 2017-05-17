@@ -18,6 +18,13 @@
         <button-counter v-on:increment="incrementTotal"></button-counter>
         <button-counter v-on:increment="incrementTotal"></button-counter>
     </div>
+    <div id="app">
+        <h1>I'm the parent title.</h1>
+        <my-component>
+            <p>This is some original content</p>
+            <p>This is some more original content</p>
+        </my-component>
+    </div>
     <script type="text/javascript">
         Vue.component('my-component', {
             template: '<div>A custom component! </div>'
@@ -61,6 +68,23 @@
                     this.total++;
                 }
             }
+        });
+
+        var template = `
+            <div>
+                <h2>I'm the child title.</h2>
+                <slot>
+                    This will only be displayed if there is no content to be distributed.
+                </slot>
+            </div>
+        `;
+
+        Vue.component('my-component', {
+            template: template
+        });
+
+        new Vue({
+            el: '#app'
         });
     </script>
 </body>
