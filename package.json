@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/carlisliu/vue-demo/issues"
   },
-  "homepage": "https://github.com/carlisliu/vue-demo#readme"
+  "homepage": "https://github.com/carlisliu/vue-demo#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "vue": "^2.3.3",
+    "vue-server-renderer": "^2.3.3"
+  }
 }
