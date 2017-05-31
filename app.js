@@ -17,7 +17,7 @@ express.get('*', (req, res) => {
         res.end(`
           <!DOCTYPE html>
           <html lang="en">
-            <head><title>Hello</title></head>
+            <head><title>Hello:${vm.$url || ''}</title></head>
             <body>${html}</body>
           </html>
         `);
