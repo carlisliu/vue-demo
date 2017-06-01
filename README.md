@@ -1,2 +1,2 @@
 # vue-demo
-demo for vue
+demo for vue & ssr
