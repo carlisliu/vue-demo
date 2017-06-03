@@ -1,2 +1,2 @@
 # vue-demo
-demo for vue & ssr
+demo for vue & Server Side Rendering
