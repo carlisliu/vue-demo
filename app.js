@@ -1,8 +1,8 @@
-const express = require('express')();
+const app = require('express')();
 
 //express.enable('strict routing');
 
 var routes = require('./routes');
-routes(express);
+routes(app);
 
-express.listen(3000);
+app.listen(3000);
